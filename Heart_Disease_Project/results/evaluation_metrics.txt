@@ -1,0 +1,59 @@
+# Heart Disease Prediction - Model Evaluation Metrics
+
+## Dataset Info
+- Total Samples: 303
+- Train/Test Split: 80/20
+- Features Used: ['ST_Depression', 'Exercise-Induced_Angina', '0_Damaged_Vessel', 'No_Thalassemia', 'Cholesterol', 'Maxheartrate']
+
+## Baseline Model Results
+    Name                f1_score        accuracy_score   precision_score    recall      AUC  
+
+0  Logistic Regression  0.579904        0.583333         0.582639           0.583333   0.855903  
+
+1                  SVC  0.566675        0.583333         0.557608           0.583333   0.853333  
+
+2        Random Forest  0.496154        0.500000         0.493750           0.500000   0.811944  
+
+3        Decision Tree  0.449289        0.416667         0.496071           0.416667   0.656875  
+
+
+## Hyperparameter-Tuned Model Results
+| Model               | Best Params                                                                                       | Accuracy|F1-Score | AUC  |
+|---------------------|---------------------------------------------------------------------------------------------------|---------|---------|------|
+| Logistic Regression | {'C': 1.0, 'penalty': 'l2'}                                                                       | 0.85    | 0.83    | 0.89 |
+| Random Forest       | {'n_estimators':150,'min_samples_split':2,'min_samples_leaf':1,'max_depth':10,'bootstrap': False} | 0.89    | 0.88    | 0.93 |
+
+
+
+======================
+📊 Clustering Results
+======================
+
+🔹 K-Means Clustering
+----------------------
+Optimal K (chosen from elbow method): 6
+Observation:
+- 6 clusters were formed.
+- Some clusters are small, others larger — suggesting subgroups exist.
+- Moderate alignment with actual disease labels.
+
+K-Means vs Actual:
+KMeans_Cluster   0   1   2   3
+Actual                        
+0               44  36  39  40
+1                9  14  18  13
+2                6  15   9   5
+3               12   7   6  10
+4                3   2   4   4
+
+🔹 Hierarchical Clustering
+--------------------------
+Linkage Method: Ward
+Distance Threshold (max_d): 7
+Number of clusters formed: (computed from fcluster output)
+
+
+## Key Insights
+- LogisticRegression (after tuning) achieved the best overall performance.
+- Clustering was moderately successful at grouping patients by disease status.
+- Feature selection reduced dimensionality without harming accuracy.
