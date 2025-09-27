@@ -53,7 +53,7 @@ Heart_Disease_Project/
 ## ⚙️ Installation & Setup
 1. Clone this repository:
 ```bash
-git clone https://github.com/abdulrahmanawad3/Heart_Disease_Project.git
+git clone https://github.com/abdulrahmanawad3/heart-disease-prediction
 cd Heart_Disease_Project
 
 
@@ -98,4 +98,5 @@ Full list available in requirements.txt
 
 👤 **Abdul Rahman Awad**
 
-- GitHub: [@YourGitHubUsername](https://github.com/abdulrahmanawad3)
+- GitHub: [@abdulrahmanawad3](https://github.com/abdulrahmanawad3)
+
